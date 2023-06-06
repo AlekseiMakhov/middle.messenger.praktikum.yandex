@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-vue"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
+      }
+    ],
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "theme",
+          "v-bind"
+        ]
+      }
+    ],
+    "selector-class-pattern": null
+  }
+}

@@ -1,0 +1,6 @@
+**/vite-env.d.ts
+**/*.config.cjs
+**/*.preset.cjs
+**/*.plugin.cjs
+**/node_modules
+**/dist

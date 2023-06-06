@@ -1,0 +1,68 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:vue/vue3-recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
+  "plugins": [
+    "import",
+    "vue",
+    "prettier",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-await-in-loop": "off",
+    "no-continue": "off",
+    "no-shadow": "off",
+    "no-restricted-syntax": "off",
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true,
+        "variables": true,
+        "allowNamedExports": false
+      }
+    ],
+    "no-useless-catch": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      {
+        "ts": "never",
+        "vue": "always",
+        "svg": "always",
+        "json": "always"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.config.{cjs,ts,js}",
+          "**/*.stories.{js,ts}"
+        ]
+      }
+    ],
+    "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "prettier/prettier": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./packages/components"
+      }
+    }
+  }
+}

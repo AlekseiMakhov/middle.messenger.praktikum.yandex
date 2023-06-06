@@ -1,0 +1,36 @@
+@import "variables";
+
+.input {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 5px;
+  height: 40px;
+  transition: $transition;
+  border-bottom: solid 1px $primary-20;
+
+  &:hover, &:focus-within {
+    border-bottom-color: solid 1px $primary-80;
+  }
+
+  &__element {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 13px;
+    color: $neutral-90;
+    line-height: 16px;
+    height: 24px;
+
+    &::placeholder {
+      color: $neutral-40;
+    }
+  }
+
+  &__label {
+    font-size: 13px;
+    line-height: 16px;
+    color: $neutral-40;
+  }
+}

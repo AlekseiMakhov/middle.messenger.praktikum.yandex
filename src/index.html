@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handlebars Web Messenger</title>
+  </head>
+  <body>
+    <script defer type='module' src="partials.ts"></script>
+    <script type="module" src="index.ts"></script>
+    <div id="app">
+      {{> button label="Нажми" class='button' type='button' }}
+      {{> link label='Страница входа' href='/pages/login/login.html' target=self }}
+    </div>
+  </body>
+</html>
