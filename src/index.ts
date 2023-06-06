@@ -1,10 +1,13 @@
 import './assets/styles/index.scss';
-import registerPageTemplate from './partials/button.tpl.ts';
-import Handlebars from 'handlebars';
-import config from './config/register.js';
+import { registerPartials } from './partials';
+import definePage from './router';
+import './pages/login/login';
+import type { CanUndefined } from './types';
 
+registerPartials();
 document.addEventListener('DOMContentLoaded', () => {
-  const app = document.getElementById('app');
-
-  const template = (app.innerHTML = registerPageTemplate(config));
+  const app = document.querySelector('#app');
+  const page: CanUndefined<any> = definePage();
+  app.innerHTML = page.compiledPage;
+  page.actionHandler();
 });

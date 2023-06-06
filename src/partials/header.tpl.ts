@@ -1,1 +1,1 @@
-<h3 class="{{class}}">{{text}}</h3>
+export default `<h3 class="{{class}}">{{text}}</h3>`;

@@ -1,19 +1,18 @@
-* {
-  font-family: "Graphik LC TT", sans-serif;
+.error-page-layout {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.m-a {
-  margin: auto;
+.error-status {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1;
 }
 
-.mb-50 {
-  margin-bottom: 50px;
-}
-
-.mb-40 {
-  margin-bottom: 40px;
-}
-
-.mb-140 {
-  margin-bottom: 140px;
+.error-message {
+  font-size: 20px;
+  line-height: 20px;
 }

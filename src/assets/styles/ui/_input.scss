@@ -1,4 +1,4 @@
-@import "variables";
+@import "../variables";
 
 .input {
   width: 100%;
@@ -8,29 +8,39 @@
   gap: 5px;
   height: 40px;
   transition: $transition;
-  border-bottom: solid 1px $primary-20;
+  border-bottom: solid 1px $primary-80;
 
   &:hover, &:focus-within {
-    border-bottom-color: solid 1px $primary-80;
+    border-bottom-color: $primary-100;
   }
 
   &__element {
     width: 100%;
     border: none;
     background-color: transparent;
-    font-size: 13px;
+    font-size: $regular;
     color: $neutral-90;
     line-height: 16px;
     height: 24px;
+    transition: inherit;
 
     &::placeholder {
       color: $neutral-40;
     }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
   }
 
   &__label {
-    font-size: 13px;
-    line-height: 16px;
-    color: $neutral-40;
+    font-size: 9px;
+    line-height: 13px;
+    color: transparent;
+    transition: inherit;
+  }
+
+  &:focus-within > .input__label {
+    color: $neutral-40 !important;
   }
 }

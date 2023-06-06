@@ -4,10 +4,10 @@ export default `
     {{> header text='Вход' class='header mb-50' }}
     <div class='form__elements mb-140'>
       {{#each inputs}}
-        {{> input item=this }}
+        {{> input item=this onChange='change' }}
       {{/each}}
     </div>
-    {{> button label=confirm.label class='button' type='button' onClick="click" }}
+    {{> button id='submit-button' label=confirm.label class='button' type='button' onClick="click" }}
     {{> link label=link.label href=link.href }}
   </form>
 </main>

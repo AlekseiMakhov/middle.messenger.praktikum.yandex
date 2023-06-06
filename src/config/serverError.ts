@@ -4,7 +4,7 @@ export default {
     message: 'Мы уже фиксим',
   },
   link: {
-    label: 'Вернуться к чатам',
-    href: '/chat',
+    label: 'На главную',
+    href: '/',
   },
 };
