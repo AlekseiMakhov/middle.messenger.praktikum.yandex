@@ -1,5 +1,5 @@
-import routes from './routes';
 import Handlebars from 'handlebars';
+import routes from './routes';
 
 const definePage = () => {
   let currentPath = window.location.pathname;

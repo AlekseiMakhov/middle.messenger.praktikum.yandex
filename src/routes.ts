@@ -13,21 +13,27 @@ export default [
     name: 'main',
     template: mainPage,
     config: config.mainConfig,
-    handler: (e) => {},
+    handler: (...args) => {
+      console.log(args);
+    },
   },
   {
     path: '/chat/',
     name: 'chat',
     template: chatPage,
     config: config.chatPageConfig,
-    handler: () => {},
+    handler: (...args) => {
+      console.log(args);
+    },
   },
   {
     path: '/login/',
     name: 'login',
     template: loginPage,
     config: config.loginPageConfig,
-    handler: loginPageHandler,
+    handler: (...args) => {
+      console.log(args);
+    },
   },
   {
     path: '/register/',
@@ -41,13 +47,17 @@ export default [
     name: 'notFound',
     template: errorTpl,
     config: config.notFoundPageConfig,
-    handler: () => {},
+    handler: (...args) => {
+      console.log(args);
+    },
   },
   {
     path: '/server-error',
     name: 'serverError',
     template: errorTpl,
     config: config.serverErrorPageConfig,
-    handler: () => {},
+    handler: (...args) => {
+      console.log(args);
+    },
   },
 ];
