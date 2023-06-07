@@ -1,5 +1,16 @@
 {
   "extends": [
     "stylelint-config-standard"
+  ],
+  "rules": {
+    "import-notation": "string",
+    "color-function-notation": "legacy",
+    "selector-class-pattern": "^([a-z]+([a-z0-9])*[_-]{0,2})+([a-z0-9])+$"
+  },
+  "overrides": [
+    {
+      "files": ["*.scss", "**/*.scss"],
+      "customSyntax": "postcss-scss"
+    }
   ]
 }

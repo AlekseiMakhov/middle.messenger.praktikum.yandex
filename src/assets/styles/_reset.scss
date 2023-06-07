@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
 body,
 h1,
 h2,
@@ -29,6 +24,7 @@ dd {
 ul[class],
 ol[class] {
   list-style: none;
+  padding: 0;
 }
 
 a:not([class]) {
@@ -38,17 +34,16 @@ a:not([class]) {
 img {
   max-width: 100%;
 }
-input {
-  &:focus {
-    outline: none !important;
-  }
-}
 
 input,
 button,
 textarea,
 select {
   font: inherit;
+}
+
+input:focus {
+  outline: none !important;
 }
 
 button {

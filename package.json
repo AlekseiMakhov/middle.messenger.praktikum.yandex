@@ -16,7 +16,7 @@
     "lint:js": "eslint src/**/*.{js,ts} --ignore-path .gitignore --ignore-path .eslintignore",
     "lint:js:fix": "eslint src/**/*.{js,ts} --fix --ignore-path .gitignore --ignore-path .eslintignore",
     "lint:css": "stylelint src/**/*.scss --ignore-path .gitignore --ignore-path .stylelintignore",
-    "lint:css:fix": "stylelint src/**/*.scss --fix --ignore-path .gitignore --ignore-path .stylelintignore"
+    "lint:css:fix": "stylelint src/**/*.scss --fix --ignore-path .gitignore --ignore-path .stylelintignore --custom-syntax"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
@@ -32,6 +32,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "express": "^4.18.2",
+    "postcss-scss": "^4.0.6",
     "prettier": "^2.8.7",
     "sass": "^1.62.1",
     "stylelint": "^15.6.2",
