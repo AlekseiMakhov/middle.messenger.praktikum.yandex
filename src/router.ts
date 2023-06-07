@@ -4,6 +4,10 @@ import Handlebars from 'handlebars';
 const definePage = () => {
   let currentPath = window.location.pathname;
 
+  if (currentPath !== '/' && currentPath.endsWith('/')) {
+    currentPath = currentPath.slice(0, -1);
+  }
+
   const route = routes.find((item) => currentPath === item.path);
 
   const notFoundRoute = routes.find((item) => item.name === 'notFound');
