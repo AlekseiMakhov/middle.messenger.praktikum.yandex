@@ -1,4 +1,4 @@
-[dev]
-  command = "npm start"
+[build]
+  command = "npm run start"
   port = 3000
-  publish = "dist"
+  publish = "/dist"
