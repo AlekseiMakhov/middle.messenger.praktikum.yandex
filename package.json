@@ -13,8 +13,6 @@
     "type-check": "tsc --noEmit",
     "lint:js": "npm run type-check && node_modules/.bin/eslint src/**/*.ts",
     "lint:js:fix": "eslint src/**/*.ts --fix",
-    "lint:css": "stylelint src/**/*.scss --ignore-path .gitignore --ignore-path .stylelintignore",
-    "lint:css:fix": "stylelint src/**/*.scss --fix --ignore-path .gitignore --ignore-path .stylelintignore"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
