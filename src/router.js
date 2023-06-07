@@ -13,7 +13,7 @@ const definePage = () => {
   const notFoundRoute = routes.find((item) => item.name === 'notFound');
 
   if (!route) {
-    window.open(window.location.hostname + notFoundRoute.path);
+    window.location.replace(notFoundRoute.path);
   }
 
   const template = Handlebars.compile(route.template);
