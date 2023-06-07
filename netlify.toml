@@ -1,4 +1,3 @@
 [build]
-  command = "npm run start"
-  port = 3000
-  publish = "static"
+  command = "npm run build"
+  publish = "dist"
