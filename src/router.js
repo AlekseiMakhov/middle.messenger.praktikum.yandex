@@ -18,10 +18,7 @@ const definePage = () => {
 
   const template = Handlebars.compile(route.template);
 
-  return {
-    compiledPage: template(route.config),
-    actionHandler: route.handler,
-  };
+  return template(route.config);
 };
 
 export default definePage;

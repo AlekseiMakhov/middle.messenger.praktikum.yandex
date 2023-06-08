@@ -10,12 +10,22 @@
   transition: $transition;
   border-bottom: solid 1px $primary-80;
 
-  &:hover, &:focus-within {
-    border-bottom-color: $primary-100;
+  &_row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+
+    &>.input__element {
+      text-align: right;
+    }
+
+    &:not(&:last-of-type) {
+      border-bottom: solid 1px $neutral-40;
+    }
   }
 
   &__element {
-    width: 100%;
     border: none;
     background-color: transparent;
     font-size: $regular;
@@ -34,13 +44,18 @@
   }
 
   &__label {
-    font-size: 9px;
+    font-size: 13px;
     line-height: 13px;
-    color: transparent;
     transition: inherit;
+    word-break: keep-all;
+    opacity: 40%;
   }
 
-  &:focus-within > .input__label {
-    color: $neutral-40 !important;
+  &:hover, &:focus-within {
+    border-bottom-color: $primary-100;
+  }
+
+  &:hover>.input__label, &:focus-within>.input__label {
+    opacity: 100% !important;
   }
 }

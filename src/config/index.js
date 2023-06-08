@@ -4,6 +4,8 @@ import notFoundPageConfig from './notFound.js';
 import serverErrorPageConfig from './serverError.js';
 import chatPageConfig from './chat.js';
 import mainConfig from './main.js';
+import changePasswordConfig from './changePassword.js';
+import profileConfig from './profile.js';
 
 export default {
   loginPageConfig,
@@ -12,4 +14,6 @@ export default {
   serverErrorPageConfig,
   chatPageConfig,
   mainConfig,
+  changePasswordConfig,
+  profileConfig,
 };

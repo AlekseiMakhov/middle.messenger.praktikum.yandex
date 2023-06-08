@@ -2,15 +2,20 @@ export default {
   inputs: [
     {
       id: 'login',
-      placeholder: 'Логин',
+      placeholder: '',
       type: 'text',
+      class: 'input',
       label: 'Логин',
+      wrapperClass: 'input',
     },
     {
       id: 'password',
-      placeholder: 'Пароль',
+      placeholder: '',
       type: 'password',
       label: 'Пароль',
+      class: 'input',
+      wrapperClass: 'input',
+      max: 20,
       min: 8,
       pattern: /[\w]+/,
       autocomplete: true,
@@ -18,6 +23,7 @@ export default {
   ],
   confirm: {
     label: 'Войти',
+    id: 'log-in',
   },
   link: {
     label: 'Перейти к регистрации',

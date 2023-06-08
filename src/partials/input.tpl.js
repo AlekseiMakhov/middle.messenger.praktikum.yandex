@@ -1,11 +1,12 @@
-export default `{{#with item}}
-  <div class='input'>
+export default `
+{{#with item}}
+  <div class='{{wrapperClass}}'>
     <label for={{id}} class='input__label'>
       {{label}}
     </label>
     <input
       id={{id}}
-      placeholder="{{placeholder}}"
+      placeholder='{{placeholder}}'
       type={{type}}
       class='input__element'
       pattern={{pattern}}
@@ -14,7 +15,7 @@ export default `{{#with item}}
       min={{min}}
       max={{max}}
       autocomplete={{autocomplete}}
-      onchange={{onChange}}
     />
   </div>
-{{/with}}`;
+{{/with}}
+`;

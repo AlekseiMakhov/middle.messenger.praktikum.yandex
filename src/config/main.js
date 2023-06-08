@@ -13,6 +13,14 @@ export default {
       href: '/chat',
     },
     {
+      label: 'На страницу профиля',
+      href: '/profile',
+    },
+    {
+      label: 'На страницу смены пароля',
+      href: '/change-password',
+    },
+    {
       label: 'На страницу ошибки 404',
       href: '/not-found',
     },
