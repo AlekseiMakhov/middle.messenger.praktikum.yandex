@@ -27,3 +27,12 @@
 ## Ссылки
 - [ссылка](https://www.figma.com/file/cO6GhuXY87gDnesBAlteJE/Chat-design?type=design&node-id=4384%3A2&t=YHxTh42ER0VPzQTP-1)
 - [деплой на Netlify](https://deploy--resplendent-crostata-870f48.netlify.app/)
+
+- [Главная](https://deploy--resplendent-crostata-870f48.netlify.app/)
+- [Страница авторизации](https://deploy--resplendent-crostata-870f48.netlify.app/login)
+- [Страница регистранции](https://deploy--resplendent-crostata-870f48.netlify.app/register)
+- [Страница профиля](https://deploy--resplendent-crostata-870f48.netlify.app/profile)
+- [Страница чата](https://deploy--resplendent-crostata-870f48.netlify.app/chat)
+- [Ошибка сервера](https://deploy--resplendent-crostata-870f48.netlify.app/server-error)
+- [Смена пароля](https://deploy--resplendent-crostata-870f48.netlify.app/change-password)
+- [Страница не найдена](https://deploy--resplendent-crostata-870f48.netlify.app/not-found)
