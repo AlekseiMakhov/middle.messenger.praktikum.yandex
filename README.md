@@ -25,8 +25,10 @@
 
 
 ## Ссылки
-- [ссылка](https://www.figma.com/file/cO6GhuXY87gDnesBAlteJE/Chat-design?type=design&node-id=4384%3A2&t=YHxTh42ER0VPzQTP-1)
+- [Макет в Figma](https://www.figma.com/file/cO6GhuXY87gDnesBAlteJE/Chat-design?type=design&node-id=4384%3A2&t=YHxTh42ER0VPzQTP-1)
 - [деплой на Netlify](https://deploy--resplendent-crostata-870f48.netlify.app/)
+
+### Страницы приложения
 
 - [Главная](https://deploy--resplendent-crostata-870f48.netlify.app/)
 - [Страница авторизации](https://deploy--resplendent-crostata-870f48.netlify.app/login)
