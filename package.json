@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "start": "vite build --sourcemap true && node server.js",
-    "build": "tsc && vite build --sourcemap true"
+    "start": "npm run build && node server.js",
+    "build": "vite build --sourcemap true"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
