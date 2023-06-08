@@ -1,9 +1,9 @@
 import Handlebars from 'handlebars';
-import buttonTpl from './button.tpl';
-import inputTpl from './input.tpl';
-import linkTpl from './link.tpl';
-import headerTpl from './header.tpl';
-import textTpl from './text.tpl';
+import buttonTpl from './button.tpl.js';
+import inputTpl from './input.tpl.js';
+import linkTpl from './link.tpl.js';
+import headerTpl from './header.tpl.js';
+import textTpl from './text.tpl.js';
 
 export const registerPartials = () => {
   Handlebars.registerPartial('button', buttonTpl);

@@ -9,38 +9,13 @@
   "scripts": {
     "dev": "vite",
     "start": "vite build --sourcemap true && node server.js",
-    "build": "tsc && vite build --sourcemap true",
-    "preview": "vite preview",
-    "build-only": "vite build --sourcemap true",
-    "type-check": "tsc --noEmit",
-    "lint:js": "eslint src/**/*.{js,ts} --ignore-path .gitignore --ignore-path .eslintignore",
-    "lint:js:fix": "eslint src/**/*.{js,ts} --fix --ignore-path .gitignore --ignore-path .eslintignore",
-    "lint:css": "stylelint src/**/*.scss --ignore-path .gitignore --ignore-path .stylelintignore",
-    "lint:css:fix": "stylelint src/**/*.scss --fix --ignore-path .gitignore --ignore-path .stylelintignore --custom-syntax"
+    "build": "tsc && vite build --sourcemap true"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "@typescript-eslint/eslint-plugin": "^5.59.8",
-    "@vituum/vite-plugin-handlebars": "^0.1.9",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.41.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-import-resolver-typescript": "^3.5.4",
-    "eslint-import-resolver-vite-ts": "^1.1.3",
-    "eslint-plugin-boundaries": "^3.1.1",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
     "postcss-scss": "^4.0.6",
-    "prettier": "^2.8.7",
     "sass": "^1.62.1",
-    "stylelint": "^15.6.2",
-    "stylelint-config-standard": "^32.0.0",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.9",
-    "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-handlebars": "^1.6.0",
-    "vite-tsconfig-paths": "^4.2.0"
+    "vite": "^4.3.9"
   },
   "dependencies": {
     "express": "^4.18.2",

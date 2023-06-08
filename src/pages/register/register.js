@@ -6,7 +6,7 @@ export default () => {
 
   const fillModel = (e, field) => {
     e.preventDefault();
-    const target = e.target as HTMLFormElement;
+    const target = e.target;
     model[field] = target.value;
   };
 
