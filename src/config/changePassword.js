@@ -1,7 +1,8 @@
 export default {
   inputs: [
     {
-      id: 'old_password',
+      id: 'oldPassword',
+      name: 'oldPassword',
       placeholder: '',
       type: 'password',
       label: 'Старый пароль',
@@ -13,7 +14,8 @@ export default {
       value: '',
     },
     {
-      id: 'new_password',
+      id: 'newPassword',
+      name: 'newPassword',
       placeholder: '',
       type: 'password',
       label: 'Новый пароль',
@@ -25,7 +27,8 @@ export default {
       value: undefined,
     },
     {
-      id: 'confirm_password',
+      id: 'confirmPassword',
+      name: 'confirmPassword',
       placeholder: '',
       type: 'password',
       label: 'Повторите новый пароль',

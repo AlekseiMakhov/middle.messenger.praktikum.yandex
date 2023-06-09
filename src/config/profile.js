@@ -2,6 +2,7 @@ export default {
   inputs: [
     {
       id: 'email',
+      name: 'email',
       placeholder: '',
       type: 'email',
       label: 'Почта',
@@ -9,6 +10,7 @@ export default {
     },
     {
       id: 'login',
+      name: 'login',
       placeholder: '',
       type: 'text',
       label: 'Логин',
@@ -16,6 +18,7 @@ export default {
     },
     {
       id: 'first_name',
+      name: 'first_name',
       placeholder: '',
       type: 'text',
       label: 'Имя',
@@ -23,13 +26,15 @@ export default {
     },
     {
       id: 'second_name',
+      name: 'second_name',
       placeholder: '',
       type: 'text',
       label: 'Фамилия',
       wrapperClass: 'input input_row',
     },
     {
-      id: 'nick_name',
+      id: 'display_name',
+      name: 'display_name',
       placeholder: '',
       type: 'text',
       label: 'Имя в чате',
@@ -37,6 +42,7 @@ export default {
     },
     {
       id: 'phone',
+      name: 'phone',
       placeholder: '',
       type: 'phone',
       label: 'Телефон',

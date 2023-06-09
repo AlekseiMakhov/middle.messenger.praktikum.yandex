@@ -2,6 +2,7 @@ export default {
   inputs: [
     {
       id: 'login',
+      name:'login',
       placeholder: '',
       type: 'text',
       class: 'input',
@@ -10,6 +11,7 @@ export default {
     },
     {
       id: 'password',
+      name: 'password',
       placeholder: '',
       type: 'password',
       label: 'Пароль',

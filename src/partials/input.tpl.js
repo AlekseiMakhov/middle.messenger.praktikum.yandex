@@ -6,6 +6,7 @@ export default `
     </label>
     <input
       id={{id}}
+      name={{name}}
       placeholder='{{placeholder}}'
       type={{type}}
       class='input__element'
