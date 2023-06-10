@@ -1,0 +1,23 @@
+{
+  "name": "messenger",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "dev": "vite",
+    "start": "npm run build && node server.js",
+    "build": "vite build --sourcemap true"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "sass": "^1.62.1",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7"
+  }
+}

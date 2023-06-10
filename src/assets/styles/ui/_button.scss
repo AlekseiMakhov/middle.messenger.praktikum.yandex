@@ -1,0 +1,35 @@
+@import "../variables";
+
+.button {
+  background-color: $primary-100;
+  color: $neutral-0;
+  border-radius: $border-radius;
+  font-size: 13px;
+  line-height: 16px;
+  height: 40px;
+  padding: 0 20px;
+  transition: $transition;
+
+  &:hover, &:active {
+    background-color: $primary-80;
+  }
+
+  &_link {
+    background-color: transparent;
+    color: $primary-100;
+
+    &:hover {
+      background-color: transparent;
+      color: $primary-80;
+    }
+  }
+
+  &_red {
+    color: $error-100;
+
+    &:hover {
+      color: $error-100;
+      opacity: 60%;
+    }
+  }
+}
