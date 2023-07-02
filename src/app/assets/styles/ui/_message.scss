@@ -1,0 +1,50 @@
+@import "../variables";
+
+.message {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  gap: 5px;
+  flex-direction: column;
+
+  &_own {
+    align-items: flex-end;
+
+    & .message__text-container {
+      background-color: $primary-20;
+    }
+  }
+
+  &__container {
+    width: max-content;
+    max-width: 60%;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+  }
+
+  &__text-container {
+    padding: 15px;
+    background-color: $neutral-5;
+  }
+
+  &__text {
+    color: $neutral-90;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &__image {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__time {
+    font-size: 9px;
+    line-height: 13px;
+    align-self: flex-end;
+    color: $neutral-40;
+  }
+}
