@@ -1,10 +1,10 @@
-import tpl from "./tpl";
-import Block from "../Block";
-import type { SearchProps } from "./types";
+import tpl from './tpl';
+import Block from '../Block';
+import type { SearchProps } from './types';
 
 export class Component extends Block<SearchProps> {
   constructor(props: SearchProps) {
-    super("div", props);
+    super('div', props);
   }
 
   render() {

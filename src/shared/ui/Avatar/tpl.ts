@@ -2,7 +2,7 @@ export default `
 {{#if src}}
 <img
   src={{src}}
-  alt="{{alt}}"
+  alt='{{alt}}'
   class='avatar'
 />
 {{else}}

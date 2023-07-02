@@ -1,6 +1,6 @@
 export type TPrimitiveType = string | number | boolean;
 
-export type Events = "click" | "input" | "change";
+export type Events = 'click' | 'input' | 'change';
 
 export type TReturnType =
   | TPrimitiveType

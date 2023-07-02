@@ -1,10 +1,10 @@
-import tpl from "./tpl";
-import Block from "../Block";
-import type { MessageInputProps } from "./types";
+import tpl from './tpl';
+import Block from '../Block';
+import type { MessageInputProps } from './types';
 
 export class Component extends Block<MessageInputProps> {
   constructor(props: MessageInputProps) {
-    super("div", props);
+    super('div', props);
   }
 
   render() {

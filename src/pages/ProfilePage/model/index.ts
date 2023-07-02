@@ -1,5 +1,5 @@
-import { props } from "../config";
-import ProfilePage from "../ui";
+import { props } from '../config';
+import ProfilePage from '../ui';
 
 export const profilePageInit = (root: HTMLElement) => {
   const page = new ProfilePage(props);

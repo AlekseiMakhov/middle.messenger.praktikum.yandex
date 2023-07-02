@@ -1,7 +1,6 @@
-import { props } from "../config";
-import Page from "../ui";
-import { handleForm } from "../../../shared/lib";
-import { messageInput } from "../config";
+import { props, messageInput } from '../config';
+import Page from '../ui';
+import { handleForm } from '../../../shared/lib';
 
 export const chatPageInit = (root: HTMLElement) => {
   const page = new Page(props);
@@ -11,7 +10,7 @@ export const chatPageInit = (root: HTMLElement) => {
   page.dispatchMounted();
   root.append(fragment);
 
-  const form = root.querySelector("form");
+  const form = root.querySelector('form');
 
   if (!form) {
     return;
@@ -20,7 +19,7 @@ export const chatPageInit = (root: HTMLElement) => {
   const formElements = [messageInput];
 
   const model: Record<string, string> = {
-    message: "",
+    message: '',
   };
 
   handleForm(model, form, formElements);

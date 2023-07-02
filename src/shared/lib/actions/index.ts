@@ -1,4 +1,4 @@
-import { TValidationOption, validate } from "../Validator";
+import { TValidationOption, validate } from '../Validator';
 
 export const blur = (e: FocusEvent, rules: TValidationOption[]) => {
   const target = e.target as HTMLInputElement;
@@ -8,9 +8,9 @@ export const blur = (e: FocusEvent, rules: TValidationOption[]) => {
   const errors = v.getErrors();
 
   if (errors.length) {
-    target.classList.add("error");
+    target.classList.add('error');
     const parent = target.parentNode as HTMLElement;
-    const error = parent.querySelector(".error-description") as HTMLElement;
+    const error = parent.querySelector('.error-description') as HTMLElement;
     error.textContent = errors;
   }
 };
@@ -18,11 +18,11 @@ export const blur = (e: FocusEvent, rules: TValidationOption[]) => {
 export const focus = (e: FocusEvent) => {
   const target = e.target as HTMLInputElement;
 
-  target.classList.remove("error");
+  target.classList.remove('error');
 
   const parent = target.parentNode as HTMLElement;
-  const description = parent.querySelector(".error-description") as HTMLElement;
-  description.textContent = "";
+  const description = parent.querySelector('.error-description') as HTMLElement;
+  description.textContent = '';
 };
 
 export const click = (e: MouseEvent) => {

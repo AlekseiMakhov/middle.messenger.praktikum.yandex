@@ -4,13 +4,28 @@
   "plugins": ["@typescript-eslint"],
   "root": true,
   "rules": {
-    "max-len": [2, 100],
+    "max-len": [2, 120],
     "@typescript-eslint/no-unused-vars": 2,
     "import/extensions": [
       "error",
       {
         "ts": "never"
       }
-    ]
+    ],
+    "import/no-unresolved": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "no-prototype-builtins": "off",
+    "import/prefer-default-export": "off",
+    "no-undef": "off",
+    "quotes": "off",
+    "class-methods-use-this": "off",
+    "comma-dangle": "off",
+    "object-curly-newline": "off",
+    "default-param-last": "off",
+    "no-use-before-define": "off",
+    "keyword-spacing": "off",
+    "no-restricted-syntax": "off",
+    "no-useless-escape": "off"
   }
 }

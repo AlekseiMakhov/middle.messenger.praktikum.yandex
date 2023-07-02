@@ -18,9 +18,11 @@ export const formElements = [
       {
         name: TActions.PATTERN,
         description:
+          // eslint-disable-next-line max-len
           "Латиница, может включать цифры и спецсимволы вроде дефиса и подчёркивания, обязательно должна быть «собака» (@) и точка после неё, но перед точкой обязательно должны быть буквы.",
         options:
-          /^(?:(?:[^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(?:\s*\".+\"))@(?:[^<>()\[\]\\.,;:\s@"]+\.)+[^<>()\[\]\\.,;:\s@"]{2,}$/,
+          // eslint-disable-next-line max-len
+          /^(?:(?:[^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|(?:\s*\'.+\'))@(?:[^<>()\[\]\\.,;:\s@']+\.)+[^<>()\[\]\\.,;:\s@']{2,}$/,
       },
     ] as TValidationOption[],
   },
@@ -46,6 +48,7 @@ export const formElements = [
       {
         name: TActions.PATTERN,
         description:
+          // eslint-disable-next-line max-len
           "Латиница, может содержать цифры, но не состоять из них, без пробелов, без спецсимволов (допустимы дефис и нижнее подчёркивание)",
         options: /^(?=.*[A-Za-z])(?!^\d+$)[A-Za-z\d_-]+$/,
       },
@@ -65,6 +68,7 @@ export const formElements = [
       {
         name: TActions.PATTERN,
         description:
+          // eslint-disable-next-line max-len
           "Латиница или кириллица, первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис)",
         options: /^(?:[А-ЯA-Z][А-ЯЁA-Zёа-яa-z-]*|Ё[А-ЯЁA-Zа-яa-z-]*)$/,
       },
@@ -84,6 +88,7 @@ export const formElements = [
       {
         name: TActions.PATTERN,
         description:
+          // eslint-disable-next-line max-len
           "Латиница или кириллица, первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис)",
         options: /^(?:[А-ЯA-Z][А-ЯЁA-Zёа-яa-z-]*|Ё[А-ЯЁA-Zа-яa-z-]*)$/,
       },

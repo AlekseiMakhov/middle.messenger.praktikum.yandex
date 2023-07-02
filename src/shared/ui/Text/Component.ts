@@ -1,9 +1,10 @@
-import Block from "../Block";
-import tpl from "./tpl";
-import { TextProps } from "./types";
+import Block from '../Block';
+import tpl from './tpl';
+import { TextProps } from './types';
+
 export class Component extends Block<TextProps> {
   constructor(props: TextProps) {
-    super("p", props);
+    super('p', props);
   }
 
   render() {

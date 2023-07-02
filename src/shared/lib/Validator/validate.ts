@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-shadow
 export const enum TActions {
-  MAX_LENGTH = "validateMaxLength",
-  MIN_LENGTH = "validateMinLength",
-  PATTERN = "validatePattern",
-  REQUIRED = "validateIsRequired",
-  IS_EQUAL = "validateIsEqual",
+  MAX_LENGTH = 'validateMaxLength',
+  MIN_LENGTH = 'validateMinLength',
+  PATTERN = 'validatePattern',
+  REQUIRED = 'validateIsRequired',
+  IS_EQUAL = 'validateIsEqual',
 }
 
 export type TValidationOption = {
@@ -13,7 +14,7 @@ export type TValidationOption = {
 };
 
 export const validate = () => {
-  let errors: string = "";
+  let errors: string = '';
 
   return (value: string, rules: TValidationOption[]) => {
     const actions = {
@@ -21,48 +22,48 @@ export const validate = () => {
         if (value.length > <number>rule.options) {
           return `Длина не должна быть больше ${rule.options}`;
         }
-        return "";
+        return '';
       },
 
       validateMinLength: (rule: TValidationOption): string => {
         if (value.length < <number>rule.options) {
           return `Длина не должна быть меньше ${rule.options}`;
         }
-        return "";
+        return '';
       },
 
       validatePattern: (rule: TValidationOption): string => {
         if (!(rule.options as RegExp).test(value)) {
           return rule.description as string;
         }
-        return "";
+        return '';
       },
 
       validateIsRequired: () => {
-        if (value === null || value === undefined || value === "") {
-          return "Поле не должно быть пустым";
+        if (value === null || value === undefined || value === '') {
+          return 'Поле не должно быть пустым';
         }
-        return "";
+        return '';
       },
 
       validateIsEqual: (
         rule: TValidationOption,
-        model: Record<string, string>
+        model: Record<string, string>,
       ) => {
         if (!model) {
-          return "";
+          return '';
         }
 
         const srcValue = model[rule.options as string];
 
         if (!srcValue) {
-          return "";
+          return '';
         }
 
         if (value !== srcValue) {
           return `Значение должно совпадать со значением поля ${rule.description}`;
         }
-        return "";
+        return '';
       },
     };
 
@@ -77,7 +78,7 @@ export const validate = () => {
         }
       });
 
-      errors = tmpErrors.join(", ");
+      errors = tmpErrors.join(', ');
 
       return errors;
     };

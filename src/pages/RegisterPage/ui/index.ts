@@ -1,3 +1,3 @@
-import { RegisterPage } from "./page";
+import { RegisterPage } from './page';
 
 export default RegisterPage;

@@ -1,11 +1,11 @@
-import tpl from "./tpl";
-import Block from "../Block";
-import type { InputProps } from "./types";
-import { blur, focus } from "../../lib";
+import tpl from './tpl';
+import Block from '../Block';
+import type { InputProps } from './types';
+import { blur, focus } from '../../lib';
 
 export class Component extends Block<InputProps> {
   constructor(props: InputProps) {
-    super("div", props);
+    super('div', props);
   }
 
   protected created() {

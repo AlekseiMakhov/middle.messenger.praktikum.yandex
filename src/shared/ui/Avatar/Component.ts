@@ -1,10 +1,10 @@
-import tpl from "./tpl";
-import Block from "../Block";
-import type { AvatarProps } from "./types";
+import tpl from './tpl';
+import Block from '../Block';
+import type { AvatarProps } from './types';
 
 export class Component extends Block<AvatarProps> {
   constructor(props: AvatarProps) {
-    super("div", props);
+    super('div', props);
   }
 
   render() {

@@ -1,18 +1,18 @@
-import { TValidationOption, validate } from "./validate";
+import { TValidationOption, validate } from './validate';
 
 export const handleForm = (
   model: Record<string, string>,
   form: HTMLFormElement,
-  formElements: Record<string, unknown>[]
+  formElements: Record<string, unknown>[],
 ) => {
-  form.addEventListener("submit", (e: SubmitEvent) => {
+  form.addEventListener('submit', (e: SubmitEvent) => {
     e.preventDefault();
     const target = e.target as HTMLFormElement;
     const elements = Array.from(target.elements);
 
     elements.forEach((el: Element & { value?: string }) => {
-      const name = el.getAttribute("name");
-      const value = el.value;
+      const name = el.getAttribute('name');
+      const { value } = el;
 
       if (!name || value === undefined) {
         return;
@@ -24,7 +24,7 @@ export const handleForm = (
     });
 
     let isValid = true;
-    let formErrors: string[] = [];
+    const formErrors: string[] = [];
 
     const v = validate();
 
@@ -55,7 +55,7 @@ export const handleForm = (
     }
 
     if (!isValid) {
-      console.error(formErrors.join("\n"));
+      console.error(formErrors.join('\n'));
     } else {
       console.log(model);
     }

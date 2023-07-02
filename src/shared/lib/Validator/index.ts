@@ -1,2 +1,2 @@
-export * from "./validate";
-export * from "./handleForm";
+export * from './validate';
+export * from './handleForm';

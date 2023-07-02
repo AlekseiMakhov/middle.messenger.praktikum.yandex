@@ -1,38 +1,40 @@
-import { Props } from "../types";
-import { AvatarProps } from "../../../shared/ui";
-import { TActions, TValidationOption } from "../../../shared/lib";
+import { Props } from '../types';
+import { AvatarProps } from '../../../shared/ui';
+import { TActions, TValidationOption } from '../../../shared/lib';
 
 export const elements = [
   {
-    component: "Input",
+    component: 'Input',
     attrs: {
-      class: "input",
+      class: 'input',
     },
-    label: "Почта",
-    id: "email",
-    name: "email",
-    type: "email",
-    value: "mail@test.test",
+    label: 'Почта',
+    id: 'email',
+    name: 'email',
+    type: 'email',
+    value: 'mail@test.test',
     autocomplete: true,
     validation: [
       {
         name: TActions.PATTERN,
         description:
-          "Латиница, может включать цифры и спецсимволы вроде дефиса и подчёркивания, обязательно должна быть «собака» (@) и точка после неё, но перед точкой обязательно должны быть буквы.",
+        // eslint-disable-next-line max-len
+          'Латиница, может включать цифры и спецсимволы вроде дефиса и подчёркивания, обязательно должна быть «собака» (@) и точка после неё, но перед точкой обязательно должны быть буквы.',
         options:
-          /^(?:(?:[^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(?:\s*\".+\"))@(?:[^<>()\[\]\\.,;:\s@"]+\.)+[^<>()\[\]\\.,;:\s@"]{2,}$/,
+        // eslint-disable-next-line max-len
+          /^(?:(?:[^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|(?:\s*\'.+\'))@(?:[^<>()\[\]\\.,;:\s@']+\.)+[^<>()\[\]\\.,;:\s@']{2,}$/,
       },
     ] as TValidationOption[],
   },
   {
-    component: "Input",
-    id: "login",
+    component: 'Input',
+    id: 'login',
     attrs: {
-      class: "input",
+      class: 'input',
     },
-    name: "login",
-    label: "Логин",
-    value: "chosen-one",
+    name: 'login',
+    label: 'Логин',
+    value: 'chosen-one',
     autocomplete: true,
     validation: [
       {
@@ -46,59 +48,62 @@ export const elements = [
       {
         name: TActions.PATTERN,
         description:
-          "Латиница, может содержать цифры, но не состоять из них, без пробелов, без спецсимволов (допустимы дефис и нижнее подчёркивание)",
+        // eslint-disable-next-line max-len
+          'Латиница, может содержать цифры, но не состоять из них, без пробелов, без спецсимволов (допустимы дефис и нижнее подчёркивание)',
         options: /^(?=.*[A-Za-z])(?!^\d+$)[A-Za-z\d_-]+$/,
       },
     ] as TValidationOption[],
   },
   {
-    component: "Input",
-    id: "first_name",
+    component: 'Input',
+    id: 'first_name',
     attrs: {
-      class: "input",
+      class: 'input',
     },
-    name: "first_name",
-    value: "Jason",
-    label: "Имя",
+    name: 'first_name',
+    value: 'Jason',
+    label: 'Имя',
     autocomplete: true,
     validation: [
       {
         name: TActions.PATTERN,
         description:
-          "Латиница или кириллица, первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис)",
+        // eslint-disable-next-line max-len
+          'Латиница или кириллица, первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис)',
         options: /^(?:[А-ЯA-Z][А-ЯЁA-Zёа-яa-z-]*|Ё[А-ЯЁA-Zа-яa-z-]*)$/,
       },
     ] as TValidationOption[],
   },
   {
-    component: "Input",
-    id: "second_name",
+    component: 'Input',
+    id: 'second_name',
     attrs: {
-      class: "input",
+      class: 'input',
     },
-    name: "second_name",
-    value: "Statham",
-    label: "Фамилия",
+    name: 'second_name',
+    value: 'Statham',
+    label: 'Фамилия',
     autocomplete: true,
     validation: [
       {
         name: TActions.PATTERN,
         description:
-          "Латиница или кириллица, первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис)",
+        // eslint-disable-next-line max-len
+          'Латиница или кириллица, первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис)',
         options: /^(?:[А-ЯA-Z][А-ЯЁA-Zёа-яa-z-]*|Ё[А-ЯЁA-Zа-яa-z-]*)$/,
       },
     ] as TValidationOption[],
   },
   {
-    component: "Input",
-    id: "phone",
+    component: 'Input',
+    id: 'phone',
     attrs: {
-      class: "input",
+      class: 'input',
     },
-    name: "phone",
-    value: "+351910322031",
-    type: "phone",
-    label: "Телефон",
+    name: 'phone',
+    value: '+351910322031',
+    type: 'phone',
+    label: 'Телефон',
     autocomplete: true,
     validation: [
       {
@@ -111,53 +116,53 @@ export const elements = [
       },
       {
         name: TActions.PATTERN,
-        description: "Состоит из цифр, может начинается с плюса",
+        description: 'Состоит из цифр, может начинается с плюса',
         options: /^\+?\d+$/,
       },
     ] as TValidationOption[],
   },
   {
-    component: "Input",
-    id: "display_name",
+    component: 'Input',
+    id: 'display_name',
     attrs: {
-      class: "input",
+      class: 'input',
     },
-    name: "display_name",
-    label: "Имя в чате",
-    value: "chosen-one",
+    name: 'display_name',
+    label: 'Имя в чате',
+    value: 'chosen-one',
     autocomplete: true,
     validation: [],
   },
 ];
 
 const avatar = <AvatarProps>{
-  component: "Avatar",
+  component: 'Avatar',
   attrs: {
-    class: "avatar-container mb-70",
+    class: 'avatar-container mb-70',
   },
 };
 
 const link = {
-  component: "Link",
+  component: 'Link',
   attrs: {
-    class: "link-container",
+    class: 'link-container',
   },
-  href: "/profile",
-  label: "Назад",
+  href: '/profile',
+  label: 'Назад',
 };
 
 const profileChangeConfirm = {
-  component: "Button",
+  component: 'Button',
   attrs: {
-    class: "button",
-    type: "submit",
+    class: 'button',
+    type: 'submit',
   },
-  label: "Сохранить",
+  label: 'Сохранить',
 };
 
 export const props = <Props>{
   attrs: {
-    class: "form-layout",
+    class: 'form-layout',
   },
 };
 

@@ -1,5 +1,5 @@
 export const cloneDeep = (src: any) => {
-  let bObject: any | any[] = Array.isArray(src) ? [] : {};
+  const bObject: any | any[] = Array.isArray(src) ? [] : {};
 
   let value;
   Object.keys(src).forEach((key) => {
@@ -8,7 +8,7 @@ export const cloneDeep = (src: any) => {
     }
     value = src[key];
 
-    bObject[key] = typeof value === "object" ? cloneDeep(value) : value;
+    bObject[key] = typeof value === 'object' ? cloneDeep(value) : value;
   });
 
   return bObject;

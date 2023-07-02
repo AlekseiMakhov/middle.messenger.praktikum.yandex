@@ -1,34 +1,34 @@
-import { Props } from "../types";
+import { Props } from '../types';
 
 export const props = <Props>{
   attrs: {
-    class: "",
+    class: '',
   },
 };
 
 const header = {
-  component: "Header",
+  component: 'Header',
   attrs: {
-    class: "header header_xl mb-40",
+    class: 'header header_xl mb-40',
   },
-  label: "500",
+  label: '500',
 };
 
 const text = {
-  component: "Text",
+  component: 'Text',
   attrs: {
-    class: "text mb-40",
+    class: 'text mb-40',
   },
-  text: "Уже фиксим",
+  text: 'Уже фиксим',
 };
 
 const link = {
-  component: "Link",
+  component: 'Link',
   attrs: {
-    class: "link-container",
+    class: 'link-container',
   },
-  label: "На главную",
-  href: "/",
+  label: 'На главную',
+  href: '/',
 };
 
 export const children = {

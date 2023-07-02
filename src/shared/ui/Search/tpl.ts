@@ -1,6 +1,6 @@
 export default `
 <input
-  class="search__element"
-  placeholder="Поиск..."
+  class='search__element'
+  placeholder='Поиск...'
 />
 `;

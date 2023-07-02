@@ -1,4 +1,4 @@
-import { cloneDeep } from "./cloneDeep";
+import { cloneDeep } from './cloneDeep';
 
 export const mergeDeep = (target: any, source: any) => {
   for (const key of Object.keys(source)) {

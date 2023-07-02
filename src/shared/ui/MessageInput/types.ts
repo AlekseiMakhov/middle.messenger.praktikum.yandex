@@ -1,4 +1,4 @@
-import { TValidationOption } from "../../lib";
+import { TValidationOption } from '../../lib';
 
 export type MessageInputProps = {
   component: string;

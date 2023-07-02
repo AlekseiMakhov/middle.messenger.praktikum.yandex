@@ -1,8 +1,8 @@
-import { CB, cloneDeep, EventBus, isEqualProps } from "../../lib";
 import Handlebars from "handlebars";
+import { v4 as uuid } from "uuid";
+import { CB, cloneDeep, EventBus, isEqualProps } from "../../lib";
 import { Nullable } from "../../types";
 import { TMeta } from "./types";
-import { v4 as uuid } from "uuid";
 
 export abstract class Block<P extends Record<string, unknown> = any> {
   static HOOKS = {
@@ -15,10 +15,13 @@ export abstract class Block<P extends Record<string, unknown> = any> {
   public id: string = uuid();
 
   _element: Nullable<HTMLElement> = null;
+
   _meta: Nullable<TMeta<P>>;
 
   public eventBus: () => EventBus;
+
   protected children: Record<string, Block | Block[]>;
+
   protected props: P;
 
   protected constructor(
@@ -62,12 +65,10 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     Object.entries(propsWithChildren || []).forEach(([key, value]) => {
       if (Array.isArray(value) && key !== "validation") {
         children[key] = value.map((el) => el);
+      } else if (value instanceof Block) {
+        children[key] = value;
       } else {
-        if (value instanceof Block) {
-          children[key] = value;
-        } else {
-          props[key] = value;
-        }
+        props[key] = value;
       }
     });
 
@@ -120,11 +121,11 @@ export abstract class Block<P extends Record<string, unknown> = any> {
 
     Object.entries(this.children).forEach(([name, component]) => {
       if (Array.isArray(component)) {
-        contextAndStubs[name] = component.map((el) => {
-          return `<div data-id="${el.id}"></div>`;
-        });
+        contextAndStubs[name] = component.map(
+          (el) => `<div data-id='${el.id}'></div>`
+        );
       } else {
-        contextAndStubs[name] = `<div data-id="${component.id}"></div>`;
+        contextAndStubs[name] = `<div data-id='${component.id}'></div>`;
       }
     });
 
@@ -136,7 +137,7 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     Object.values(this.children).forEach((component) => {
       if (Array.isArray(component)) {
         component.forEach((elem) => {
-          const stub = tpl.content.querySelector(`[data-id="${elem.id}"]`);
+          const stub = tpl.content.querySelector(`[data-id='${elem.id}']`);
 
           if (!stub) {
             return;
@@ -155,7 +156,7 @@ export abstract class Block<P extends Record<string, unknown> = any> {
           stub.replaceWith(elem.getContent()!);
         });
       } else {
-        const stub = tpl.content.querySelector(`[data-id="${component.id}"]`);
+        const stub = tpl.content.querySelector(`[data-id='${component.id}']`);
 
         const attrs = component.props?.attrs || {};
 
@@ -207,9 +208,7 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     this._addEvents(this._element!);
   }
 
-  protected render(...args: unknown[]): Node | void {
-    console.log(args);
-  }
+  protected render(): Node | void {}
 
   getContent() {
     return this.element;

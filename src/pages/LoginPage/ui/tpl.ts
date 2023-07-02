@@ -1,6 +1,6 @@
 export default `
-<section class="main-layout">
-  <form class="form w-380">
+<section class='main-layout'>
+  <form class='form w-380'>
     {{{header}}}
     <div class='form__elements mb-140'>
       {{#each formElements}}

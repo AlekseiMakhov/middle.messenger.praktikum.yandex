@@ -1,6 +1,7 @@
 import { CanUndef } from "../../types";
 
-const enum METHODS {
+// eslint-disable-next-line no-shadow
+enum METHODS {
   GET = "get",
   POST = "post",
   PUT = "put",
@@ -21,23 +22,18 @@ function queryStringify(data: FetchData) {
   if (!data) {
     return "";
   }
-  return (
-    "?" +
-    Object.entries(data)
-      .reduce((acc: string[], [key, value]) => {
-        const preparedValue = Array.isArray(value)
-          ? value.join(",")
-          : String(value);
-        acc.push(`${key}=${preparedValue}`);
-        return acc;
-      }, [])
-      .join("&")
-  );
+  return `?${Object.entries(data)
+    .reduce((acc: string[], [key, value]) => {
+      const preparedValue = Array.isArray(value)
+        ? value.join(",")
+        : String(value);
+      acc.push(`${key}=${preparedValue}`);
+      return acc;
+    }, [])
+    .join("&")}`;
 }
 
-const prepareData = (data: FetchData) => {
-  return JSON.stringify(data);
-};
+const prepareData = (data: FetchData) => JSON.stringify(data);
 
 class HTTPTransport {
   get = (url: string, options: FetchOptions = {}) => {
@@ -72,6 +68,7 @@ class HTTPTransport {
       });
 
       xhr.timeout = timeout || 0;
+      // eslint-disable-next-line func-names
       xhr.onload = function () {
         resolve(xhr);
       };
@@ -102,7 +99,5 @@ export const fetcher = (
     throw new Error("No more attempts");
   }
 
-  return client[method](url, { timeout: 1000 }).catch(() =>
-    fetcher(url, { retries: retries - 1 }, method)
-  );
+  return client[method](url, { timeout: 1000 }).catch(() => fetcher(url, { retries: retries - 1 }, method));
 };

@@ -1,7 +1,10 @@
-import type { CB, IEvents, Events, TReturnType } from "./types";
+import type {
+  CB, IEvents, Events, TReturnType,
+} from './types';
 
 export class EventBus {
   listeners: IEvents;
+
   constructor() {
     this.listeners = {};
   }
@@ -20,7 +23,7 @@ export class EventBus {
     }
 
     this.listeners[event] = this.listeners[event].filter(
-      (listener: CB) => listener !== callback
+      (listener: CB) => listener !== callback,
     );
   }
 
@@ -29,7 +32,7 @@ export class EventBus {
       throw new Error(`Нет события: ${event}`);
     }
 
-    this.listeners[event].forEach(function (listener) {
+    this.listeners[event].forEach((listener) => {
       listener(...args);
     });
   }
