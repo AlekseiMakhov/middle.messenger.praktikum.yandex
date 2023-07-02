@@ -12,7 +12,7 @@
     "build": "vite build --sourcemap true",
     "type-check": "tsc --noEmit",
     "lint:js": "npm run type-check && node_modules/.bin/eslint src/**/*.ts",
-    "lint:js:fix": "eslint src/**/*.ts --fix",
+    "lint:js:fix": "eslint src/**/*.ts --fix"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
