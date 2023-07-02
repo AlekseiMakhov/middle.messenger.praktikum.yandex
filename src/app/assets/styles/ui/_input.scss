@@ -10,28 +10,6 @@
   transition: $transition;
   border-bottom: solid 1px $primary-80;
 
-  &_row {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    border: none;
-
-    &>.error-description {
-      display: none;
-    }
-
-    &>.input__element {
-      text-align: right;
-      justify-self: flex-end;
-      margin-left: auto;
-    }
-
-    &:not(&:last-of-type) {
-      border-bottom: solid 1px $neutral-40;
-    }
-  }
-
   &__element {
     border: none;
     background-color: transparent;
@@ -50,12 +28,34 @@
     }
   }
 
+  &_row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    border: none;
+
+    &>.error-description {
+      display: none;
+    }
+
+    &:not(&:last-of-type) {
+      border-bottom: solid 1px $neutral-40;
+    }
+
+    &>.input__element {
+      text-align: right;
+      justify-self: flex-end;
+      margin-left: auto;
+    }
+  }
+
   &__label {
     font-size: 9px;
     line-height: 13px;
     transition: inherit;
     word-break: keep-all;
-    opacity: 40%;
+    opacity: 0.4;
   }
 
   &:hover, &:focus-within {
@@ -63,7 +63,7 @@
   }
 
   &:hover>.input__label, &:focus-within>.input__label {
-    opacity: 100% !important;
+    opacity: 1 !important;
   }
 
   .error {

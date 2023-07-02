@@ -1,14 +1,14 @@
-import { registerPageInit } from "../pages/RegisterPage";
-import { loginPageInit } from "../pages/LoginPage";
-import { profilePageInit } from "../pages/ProfilePage";
-import { mainPageInit } from "../pages/MainPage";
-import { profileChangePageInit } from "../pages/ProfileChangePage";
-import { passwordChangePageInit } from "../pages/PasswordChangePage";
-import { nofFoundPageInit } from "../pages/NotFoundPage";
-import { errorPageInit } from "../pages/ErrorPage";
-import { chatPageInit } from "../pages/ChatsPage";
+import { registerPageInit } from "../../../pages/RegisterPage";
+import { loginPageInit } from "../../../pages/LoginPage";
+import { profilePageInit } from "../../../pages/ProfilePage";
+import { mainPageInit } from "../../../pages/MainPage";
+import { profileChangePageInit } from "../../../pages/ProfileChangePage";
+import { passwordChangePageInit } from "../../../pages/PasswordChangePage";
+import { nofFoundPageInit } from "../../../pages/NotFoundPage";
+import { errorPageInit } from "../../../pages/ErrorPage";
+import { chatPageInit } from "../../../pages/ChatsPage";
 
-export default [
+export const routes = [
   {
     path: "/",
     name: "main",

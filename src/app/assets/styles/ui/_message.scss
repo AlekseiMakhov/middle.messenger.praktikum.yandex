@@ -8,6 +8,11 @@
   gap: 5px;
   flex-direction: column;
 
+  &__text-container {
+    padding: 15px;
+    background-color: $neutral-5;
+  }
+
   &_own {
     align-items: flex-end;
 
@@ -22,11 +27,6 @@
     display: flex;
     gap: 5px;
     flex-direction: column;
-  }
-
-  &__text-container {
-    padding: 15px;
-    background-color: $neutral-5;
   }
 
   &__text {
