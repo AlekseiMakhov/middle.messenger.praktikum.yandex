@@ -10,6 +10,6 @@ app.use('*', (req, res) => {
   res.sendFile(path.resolve('dist', 'index.html'));
 });
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });

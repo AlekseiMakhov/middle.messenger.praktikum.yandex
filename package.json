@@ -1,7 +1,7 @@
 {
   "name": "messenger",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "engines": {
     "node": ">=16"
@@ -9,15 +9,34 @@
   "scripts": {
     "dev": "vite",
     "start": "npm run build && node server.js",
-    "build": "vite build --sourcemap true"
+    "build": "vite build --sourcemap true",
+    "type-check": "tsc --noEmit",
+    "lint:js": "npm run type-check && node_modules/.bin/eslint src/**/*.ts",
+    "lint:js:fix": "eslint src/**/*.ts --fix",
+    "lint:css": "stylelint src/**/*.scss --ignore-path .gitignore --ignore-path .stylelintignore",
+    "lint:css:fix": "stylelint src/**/*.scss --fix --ignore-path .gitignore --ignore-path .stylelintignore"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/uuid": "^9.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
     "autoprefixer": "^10.4.14",
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "express": "^4.18.2",
+    "prettier": "^2.8.7",
     "sass": "^1.62.1",
-    "vite": "^4.3.9"
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.3.9",
+    "vite-plugin-eslint": "^1.8.1"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "uuid": "^9.0.0"
   }
 }

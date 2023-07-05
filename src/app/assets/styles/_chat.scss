@@ -1,0 +1,96 @@
+@import "variables";
+
+.chat-layout {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  grid-gap: 20px;
+  padding: 30px 30px 0;
+  background-color: $neutral-5;
+  overflow: hidden;
+  grid-template-rows: 40px 1fr 70px ;
+  grid-template-columns: 350px 1fr;
+}
+
+.chat-search {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.chat-groups {
+  grid-row: 2/4;
+  grid-column: 1;
+  overflow-y: auto;
+}
+
+.profile-link {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.chats-field {
+  position: relative;
+  height: 100%;
+  grid-column: 2/4;
+  grid-row: 2;
+  background-color: $neutral-0;
+  display: flex;
+  border-radius: $border-radius;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+
+  &_empty {
+    margin: auto;
+    justify-self: center;
+    align-self: center;
+    font-size: 13px;
+    color: $neutral-40;
+  }
+
+  &__messages {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &__group {
+    position: sticky;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: stretch;
+    align-items: center;
+    height: 90px;
+    border-bottom: 1px solid $neutral-10;
+    padding: 30px 20px;
+    background-color: $neutral-0;
+  }
+
+  &__avatar {
+    width: 55px;
+    height: 55px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    background-color: $neutral-20;
+  }
+
+  &__name {
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 500;
+    color: $neutral-90;
+  }
+}
+
+.chat-message {
+  grid-column: 2/4;
+  grid-row: 3;
+  margin-bottom: 20px;
+  background-color: $neutral-0;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,79 @@
+@import "../variables";
+
+.input {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 5px;
+  height: 40px;
+  transition: $transition;
+  border-bottom: solid 1px $primary-80;
+
+  &__element {
+    border: none;
+    background-color: transparent;
+    font-size: $regular;
+    color: $neutral-90;
+    line-height: 16px;
+    height: 24px;
+    transition: inherit;
+
+    &::placeholder {
+      color: $neutral-40;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  &_row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    border: none;
+
+    &>.error-description {
+      display: none;
+    }
+
+    &:not(&:last-of-type) {
+      border-bottom: solid 1px $neutral-40;
+    }
+
+    &>.input__element {
+      text-align: right;
+      justify-self: flex-end;
+      margin-left: auto;
+    }
+  }
+
+  &__label {
+    font-size: 9px;
+    line-height: 13px;
+    transition: inherit;
+    word-break: keep-all;
+    opacity: 0.4;
+  }
+
+  &:hover, &:focus-within {
+    border-bottom-color: $primary-100;
+  }
+
+  &:hover>.input__label, &:focus-within>.input__label {
+    opacity: 1 !important;
+  }
+
+  .error {
+    color: $error-100;
+  }
+
+  .error-description {
+    color: $error-100;
+    font-size: 9px;
+    width: 100%;
+    line-height: 10px;
+  }
+}
