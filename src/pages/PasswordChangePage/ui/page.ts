@@ -1,17 +1,11 @@
-import Block from '../../../shared/ui/Block';
 import tpl from './tpl';
-import { children } from '../config';
 import { createChildren } from '../../../shared/lib';
 import { components } from '../../../shared/ui';
-import { Props } from '../types';
+import Form from '../../../shared/ui/Form';
 
-export class Page extends Block {
-  constructor(props: Props) {
-    super('section', props);
-  }
-
+export class Page extends Form {
   protected created() {
-    this.children = createChildren(components, children);
+    this.children = createChildren(components, this.props);
   }
 
   render() {

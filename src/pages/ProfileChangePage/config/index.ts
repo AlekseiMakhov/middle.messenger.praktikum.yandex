@@ -1,8 +1,16 @@
-import { Props } from '../types';
 import { AvatarProps } from '../../../shared/ui';
 import { TActions, TValidationOption } from '../../../shared/lib';
 
-export const elements = [
+export const model: Record<string, string> = {
+  login: '',
+  email: '',
+  phone: '',
+  first_name: '',
+  second_name: '',
+  display_name: '',
+};
+
+export const formElements = [
   {
     component: 'Input',
     attrs: {
@@ -151,7 +159,7 @@ const link = {
   label: 'Назад',
 };
 
-const profileChangeConfirm = {
+const confirmButton = {
   component: 'Button',
   attrs: {
     class: 'button',
@@ -160,15 +168,21 @@ const profileChangeConfirm = {
   label: 'Сохранить',
 };
 
-export const props = <Props>{
-  attrs: {
-    class: 'form-layout',
+export const profileChangeFormChildren = {
+  profileChangeForm: {
+    component: 'Form',
+    model,
+    attrs: {
+      class: 'form w-380',
+      novalidate: true,
+      name: 'profile-change',
+    },
+    children: {
+      confirmButton,
+      formElements,
+    },
+    formElementsClass: "form__elements mb-140"
   },
-};
-
-export const children = {
   avatar,
-  elements,
-  profileChangeConfirm,
   link,
 };

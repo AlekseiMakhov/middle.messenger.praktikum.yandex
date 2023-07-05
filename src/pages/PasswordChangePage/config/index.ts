@@ -1,6 +1,10 @@
 import { ButtonProps, HeaderProps } from '../../../shared/ui';
-import { Props } from '../types';
 import { TActions, TValidationOption } from '../../../shared/lib';
+
+export const model = {
+  password: '',
+  confirm_password: '',
+};
 
 export const formElements = [
   {
@@ -88,15 +92,21 @@ const link = {
   label: 'Назад',
 };
 
-export const props = <Props>{
-  attrs: {
-    class: 'form',
+export const passwordChangeFormChildren = {
+  passwordChangeForm: {
+    component: 'Form',
+    model,
+    attrs: {
+      class: 'form w-380',
+      novalidate: true,
+      name: 'password-change',
+    },
+    children: {
+      header,
+      confirmButton,
+      formElements,
+    },
+    formElementsClass: "form__elements mb-140"
   },
-};
-
-export const children = {
-  formElements,
-  header,
-  confirmButton,
   link,
 };

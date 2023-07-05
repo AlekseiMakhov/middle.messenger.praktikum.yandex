@@ -1,28 +1,11 @@
-import RegisterPage, { formElements, registerProps } from '../index';
-import { handleForm } from '../../../shared/lib';
+import RegisterPage from '../ui';
+import { model, registerFormChildren } from '../config';
 
 export const registerPageInit = (root: HTMLElement) => {
-  const page = new RegisterPage(registerProps);
+  const page = new RegisterPage(registerFormChildren, model);
 
   const fragment = page.render();
-  page.dispatchMounted();
+
   root.append(fragment);
-
-  const form = root.querySelector('form');
-
-  if (!form) {
-    return;
-  }
-
-  const model: Record<string, string> = {
-    login: '',
-    email: '',
-    password: '',
-    phone: '',
-    first_name: '',
-    second_name: '',
-    confirm_password: '',
-  };
-
-  handleForm(model, form, formElements);
+  page.dispatchMounted();
 };

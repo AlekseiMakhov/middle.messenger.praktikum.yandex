@@ -8,6 +8,10 @@ import {
 } from '../../../shared/ui';
 import { TActions } from '../../../shared/lib';
 
+export const model = {
+  message: '',
+};
+
 export const chatGroups = [
   {
     component: 'ChatGroup',
@@ -281,11 +285,22 @@ export const props = <Props>{
   group,
 };
 
-export const children = {
+export const messageSendFormChildren = {
+  messageSendForm: {
+    component: 'Form',
+    model,
+    attrs: {
+      class: 'chat-message',
+      novalidate: true,
+      name: 'message-send',
+    },
+    children: {
+      formElements: [messageInput],
+      confirmButton: messageSendButton,
+    },
+  },
   chatGroups,
   search,
   profileLink,
-  messageInput,
-  messageSendButton,
   messages,
 };

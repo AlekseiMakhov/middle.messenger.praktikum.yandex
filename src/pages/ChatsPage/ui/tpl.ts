@@ -26,9 +26,6 @@ export default `
     </p>
     {{/if}}
   </div>
-  <form class='chat-message'>
-    {{{messageInput}}}
-    {{{messageSendButton}}}
-  </form>
+  {{{messageSendForm}}}
 </main>
 `;

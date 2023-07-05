@@ -8,6 +8,7 @@ import ChatGroup from './ChatGroup';
 import Search from './Search';
 import Message from './Message';
 import MessageInput from './MessageInput';
+import Form from './Form';
 
 export * from './Avatar';
 export * from './Button';
@@ -19,6 +20,7 @@ export * from './Block';
 export * from './ChatGroup';
 export * from './Message';
 export * from './MessageInput';
+export * from './Form';
 
 export const components = <Record<string, unknown>>{
   Header,
@@ -31,4 +33,5 @@ export const components = <Record<string, unknown>>{
   Search,
   Message,
   MessageInput,
+  Form,
 };

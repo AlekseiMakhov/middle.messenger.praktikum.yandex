@@ -4,7 +4,7 @@ import { CB, cloneDeep, EventBus, isEqualProps } from "../../lib";
 import { Nullable } from "../../types";
 import { TMeta } from "./types";
 
-export abstract class Block<P extends Record<string, unknown> = any> {
+export abstract class Component<P extends Record<string, unknown> = any> {
   static HOOKS = {
     CREATED: "created",
     MOUNTED: "flow:mounted",
@@ -20,7 +20,9 @@ export abstract class Block<P extends Record<string, unknown> = any> {
 
   public eventBus: () => EventBus;
 
-  protected children: Record<string, Block | Block[]>;
+  public tagName: keyof HTMLElementTagNameMap = "div";
+
+  protected children: Record<string, Component | Component[]>;
 
   protected props: P;
 
@@ -39,7 +41,7 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     this.children = children;
     this.eventBus = () => eventBus;
     this._registerEvents(eventBus);
-    eventBus.emit(Block.HOOKS.CREATED);
+    eventBus.emit(Component.HOOKS.CREATED);
   }
 
   // hooks
@@ -48,7 +50,7 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     if (!response) {
       return;
     }
-    this.eventBus().emit(Block.HOOKS.RENDER);
+    this.eventBus().emit(Component.HOOKS.RENDER);
   }
 
   protected beforeUpdate(oldProps: P, newProps: P) {
@@ -56,16 +58,14 @@ export abstract class Block<P extends Record<string, unknown> = any> {
   }
 
   private _getPropsAndChildren(propsWithChildren: P): {
-    children: Record<string, Block | Block[]>;
+    children: Record<string, Component | Component[]>;
     props: P;
   } {
     const props: Record<string, unknown> = {};
-    const children: Record<string, Block | Block[]> = {};
+    const children: Record<string, Component | Component[]> = {};
 
     Object.entries(propsWithChildren || []).forEach(([key, value]) => {
-      if (Array.isArray(value) && key !== "validation") {
-        children[key] = value.map((el) => el);
-      } else if (value instanceof Block) {
+      if (value instanceof Component) {
         children[key] = value;
       } else {
         props[key] = value;
@@ -76,10 +76,10 @@ export abstract class Block<P extends Record<string, unknown> = any> {
   }
 
   private _registerEvents(eventBus: EventBus) {
-    eventBus.on(Block.HOOKS.CREATED, this._created.bind(this));
-    eventBus.on(Block.HOOKS.MOUNTED, this._mounted.bind(this));
-    eventBus.on(Block.HOOKS.BEFORE_UPDATE, this._beforeUpdate.bind(this) as CB);
-    eventBus.on(Block.HOOKS.RENDER, this._render.bind(this));
+    eventBus.on(Component.HOOKS.CREATED, this._created.bind(this));
+    eventBus.on(Component.HOOKS.MOUNTED, this._mounted.bind(this));
+    eventBus.on(Component.HOOKS.BEFORE_UPDATE, this._beforeUpdate.bind(this) as CB);
+    eventBus.on(Component.HOOKS.RENDER, this._render.bind(this));
   }
 
   private _createResources() {
@@ -91,7 +91,7 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     this._createResources();
     this.created();
 
-    this.eventBus().emit(Block.HOOKS.RENDER);
+    this.eventBus().emit(Component.HOOKS.RENDER);
   }
 
   protected created() {}
@@ -130,6 +130,7 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     });
 
     const html = Handlebars.compile(template)(contextAndStubs);
+
     const tpl = document.createElement("template");
 
     tpl.innerHTML = html;
@@ -168,9 +169,9 @@ export abstract class Block<P extends Record<string, unknown> = any> {
           component.getContent()?.setAttribute(key, value as string);
         });
 
-        component.getContent()?.append(...Array.from(stub.childNodes));
-
         this._addEvents(component.getContent() as HTMLElement);
+
+        component.getContent()?.append(...Array.from(stub.childNodes));
         stub.replaceWith(component.getContent()!);
       }
     });
@@ -178,12 +179,14 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     return tpl.content;
   }
 
-  protected setProps = (nextProps: P) => {
+  public setProps = (nextProps: P) => {
     if (!nextProps) {
       return;
     }
 
     Object.assign(this.props, nextProps);
+
+    // console.log(this.props);
   };
 
   private _addEvents(target: HTMLElement) {
@@ -194,15 +197,36 @@ export abstract class Block<P extends Record<string, unknown> = any> {
     Object.entries(events).forEach(([name, cb]) => {
       const element = target.querySelector("[data-events]");
 
+      // const ev = element?.getAttribute("data-events");
+
+      // console.log(ev);
+
       if (element) {
         element.addEventListener(name, cb);
       }
+
       this._element?.addEventListener(name, cb);
+    });
+  }
+
+  private _removeEvents(target: HTMLElement) {
+    const { events = {} } = this.props as P & {
+      events: Record<string, () => void>;
+    };
+
+    Object.entries(events).forEach(([name, cb]) => {
+      const element = target.querySelector("[data-events]");
+
+      if (element) {
+        element.removeEventListener(name, cb);
+      }
+      this._element?.removeEventListener(name, cb);
     });
   }
 
   private _render() {
     const fragment = this.render();
+    this._removeEvents(this._element!);
     this._element!.innerHTML = "";
     this._element!.append(fragment as Node);
     this._addEvents(this._element!);
@@ -231,7 +255,7 @@ export abstract class Block<P extends Record<string, unknown> = any> {
 
         target[p as keyof P] = value;
 
-        self.eventBus().emit(Block.HOOKS.BEFORE_UPDATE, oldTarget, target);
+        self.eventBus().emit(Component.HOOKS.BEFORE_UPDATE, oldTarget, target);
         return true;
       },
 

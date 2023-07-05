@@ -1,5 +1,5 @@
-import RegisterPage from './ui';
+import Page from './ui';
 
-export default RegisterPage;
+export default Page;
 export * from './config';
 export * from './model';

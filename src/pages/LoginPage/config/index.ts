@@ -1,6 +1,10 @@
 import { ButtonProps, HeaderProps } from '../../../shared/ui';
-import { LoginProps } from '../types';
 import { TActions } from '../../../shared/lib';
+
+export const model = {
+  login: '',
+  password: '',
+};
 
 export const formElements = [
   {
@@ -84,15 +88,21 @@ const link = {
   label: 'Зарегистрироваться',
 };
 
-export const loginProps = <LoginProps>{
-  attrs: {
-    class: 'login-form',
+export const loginFormChildren = {
+  loginForm: {
+    component: 'Form',
+    model,
+    attrs: {
+      class: 'form w-380',
+      novalidate: true,
+      name: 'login',
+    },
+    children: {
+      header,
+      confirmButton,
+      formElements,
+    },
+    formElementsClass: "form__elements mb-140"
   },
-};
-
-export const children = {
-  formElements,
-  header,
-  confirmButton,
   link,
 };

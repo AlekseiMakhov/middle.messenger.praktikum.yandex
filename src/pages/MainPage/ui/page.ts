@@ -7,7 +7,7 @@ import { components } from '../../../shared/ui';
 
 export class LoginPage extends Block {
   constructor(props: MainProps) {
-    super('section', props);
+    super('nav', props);
   }
 
   protected created() {

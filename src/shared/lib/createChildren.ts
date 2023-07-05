@@ -1,4 +1,9 @@
-const createChildComponent = (components: Record<string, any>, props: any) => new components[props.component](props);
+const createChildComponent = (components: Record<string, any>, props: any) => {
+  if (props.model) {
+    return new components[props.component](props, props.model);
+  }
+  return new components[props.component](props);
+};
 
 export const createChildren = (
   components: Record<string, unknown>,

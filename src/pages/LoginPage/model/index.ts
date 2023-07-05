@@ -1,23 +1,10 @@
-import LoginPage, { formElements, loginProps } from '../index';
-import { handleForm } from '../../../shared/lib';
+import { model, loginFormChildren } from '../config';
+import LoginPage from '../ui';
 
 export const loginPageInit = (root: HTMLElement) => {
-  const page = new LoginPage(loginProps);
+  const page = new LoginPage(loginFormChildren, model);
 
   const fragment = page.render();
   page.dispatchMounted();
   root.append(fragment);
-
-  const form = root.querySelector('form');
-
-  if (!form) {
-    return;
-  }
-
-  const model: Record<string, string> = {
-    login: '',
-    password: '',
-  };
-
-  handleForm(model, form, formElements);
 };

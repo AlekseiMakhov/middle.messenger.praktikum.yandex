@@ -1,6 +1,15 @@
 import { ButtonProps, HeaderProps } from "../../../shared/ui";
-import { RegisterProps } from "../types";
-import { TActions, TValidationOption } from "../../../shared/lib";
+import { TActions, TValidationOption } from '../../../shared/lib';
+
+export const model: Record<string, string> = {
+  login: '',
+  email: '',
+  password: '',
+  phone: '',
+  first_name: '',
+  second_name: '',
+  confirm_password: '',
+};
 
 export const formElements = [
   {
@@ -206,15 +215,21 @@ const link = {
   label: "Войти",
 };
 
-export const registerProps = <RegisterProps>{
-  attrs: {
-    class: "register-form",
+export const registerFormChildren = {
+  registerForm: {
+    component: 'Form',
+    model,
+    attrs: {
+      class: 'form w-380',
+      novalidate: true,
+      name: 'register',
+    },
+    children: {
+      header,
+      confirmButton,
+      formElements,
+    },
+    formElementsClass: "form__elements mb-140"
   },
-};
-
-export const children = {
-  formElements,
-  header,
-  confirmButton,
   link,
 };

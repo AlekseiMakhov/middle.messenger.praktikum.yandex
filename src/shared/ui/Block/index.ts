@@ -1,4 +1,4 @@
-import { Block } from './Block';
+import { Component } from './Component';
 
-export default Block;
+export default Component;
 export * from './types';
